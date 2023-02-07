@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSSSorter</title>
+</head>
+<body>
+  <h1>CSSSorter Example</h1>
+  <h2>Source</h2>
+  <pre id="source">
+/* このCSSのプロパティの並び順を変更します */
+.class-of-something {
+  unknown-property: none; /* 存在しないプロパティ */
+  font-size: 2rem;
+  font-weight: bold;
+  display: grid;
+  display: -ms-grid;
+  position: static;
+}
+  </pre>
+  <h2>Output</h2>
+  <pre id="output"></pre>
+  <script src="css_sorter.js"></script>
+  <script>
+    const src = document.getElementById('source').innerText;
+    CSSSorter(src).then((o) => {
+      document.getElementById('output').innerText = o;
+    });
+  </script>
+</body>
+</html>
